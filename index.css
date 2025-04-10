@@ -319,6 +319,7 @@ div#articles {
     #section-2 article div {
         display: flex;
         flex-direction: column;
+        gap: 1vw;
     }
 }
 
