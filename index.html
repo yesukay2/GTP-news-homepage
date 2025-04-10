@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+</head>
+<body>
+    <header>
+        <img src="./assets/images/logo.svg"  id="logo" alt="News App Logo">
+        <nav class="open-menu">
+            <div id="menu-btn">
+            <img src="./assets/images/icon-menu-close.svg" id="nav-close" alt="menu close icon">
+                <img src="./assets/images/icon-menu.svg" id="nav-open" alt="menu open icon">
+            </div>
+            <div class="nav-items">
+                <a href="/index.html">Home </a>
+                <a href="#"> New</a>
+                <a href="#">Popular</a>
+                <a href="#">Trending</a>
+                <a href="#">Categories</a>
+            </div>
+        </nav>
+        <div id="nav-background">
+        </div>
+    </header>
+    <main>
+        <section id="section-1">
+            <div id="hero">
+                <img src="./assets/images/image-web-3-desktop.jpg" alt="Web 3 image">
+                <article id="hero-content">
+                    <div id="hero-title">
+                        <h1>The Bright Future of Web 3.0?</h1>
+                    </div>
+                    <div id="content-summary">
+                        <summary>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</summary>
+                        <button alt="Read More button">READ MORE</button>
+                    </div>
+                </article>
+            </div>
+            <div id="news">
+                <h1 id="title">New</h1>
+                <div id="articles">
+                    <article>
+                        <h1>Hydrogen VS Electric Cars</h1>
+                        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+                    </article>
+                    <div class="divider"></div>
+                    <article>
+                        <h1>The Downsides of AI Artistry</h1>
+                        <p>What are the possible adverse effects of on-demand AI image generation?</p>
+                    </article>
+                    <div class="divider"></div>
+                    <article>
+                        <h1>Is VC Funding Drying Up?</h1>
+                        <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+                    </article>
+               </div>
+            </div>
+        </section>
+        <section id="section-2">
+            <article>
+                <img src="./assets/images/image-retro-pcs.jpg" alt="Retro PCs Image">
+                <div>
+                    <p>01</p>
+                    <h1>Reviving Retro PCs</h1>
+                    <p>What happens when old PCs are given modern upgrades?</p>
+                </div>
+            </article>
+            <article>
+                <img src="./assets/images/image-top-laptops.jpg" alt="Top Laptops Image">
+                <div>
+                    <p>02</p>
+                    <h1>Top 10 Laptops of 2022</h1>
+                    <p>Our best picks for various needs and budgets.</p>
+                </div>
+            </article>
+            <article>
+                <img src="./assets/images/image-retro-pcs.jpg" alt="Retro PCs Image">
+                <div>
+                    <p>03</p>
+                    <h1>The Growth of Gaming</h1>
+                    <p>How the pandemic has sparked fresh opportunities.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.querySelector('nav');
+        const closeIcon = menuBtn.children[0];
+        const openIcon = menuBtn.children[1];
+        const navLinks = nav.querySelectorAll('a');
+        const overlay = document.getElementById("nav-background");
+      
+        closeIcon.style.display = 'none'; // hide close initially
+      
+        const toggleNav = () => {
+          const isOpen = nav.classList.toggle('active');
+          closeIcon.style.display = isOpen ? 'block' : 'none';
+          openIcon.style.display = isOpen ? 'none' : 'block';
+          overlay.classList = isOpen ? 'show' : 'hide'
+        };
+      
+        menuBtn.addEventListener('click', toggleNav);
+      
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (nav.classList.contains('active')) toggleNav();
+          });
+        });
+    </script>
+      
+</body>
+</html>
