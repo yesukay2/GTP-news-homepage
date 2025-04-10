@@ -475,9 +475,12 @@ div#articles {
     #section-2 article div {
         display: flex;
         flex-direction: column;
-        gap: 2vh;
+        gap: 2vw;
     }
 
+    #section-2 article div h1{
+        margin-bottom: 2.5vw;
+    }
     #section-2 article p:nth-of-type(2) {
         padding: 0;
         margin: 0;
